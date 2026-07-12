@@ -128,8 +128,8 @@ const ICON_DOWN = iconSvg("chevron-down");
 const ICON_CHEVRON = iconSvg("chevron-down", "h-4 w-4");
 const ICON_MORE = iconSvg("more");
 const ICON_PLUS = iconSvg("plus", "h-5 w-5");
-const ICON_GROUP = iconSvg("group-blocks", "h-[15px] w-[15px]");
-const ICON_UNGROUP = iconSvg("ungroup", "h-[15px] w-[15px]");
+const ICON_GROUP = iconSvg("group-blocks", "h-5 w-5");
+const ICON_UNGROUP = iconSvg("ungroup", "h-5 w-5");
 const ICON_LINK = iconSvg("link");
 const ICON_CAPTION = iconSvg("caption");
 
