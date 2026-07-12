@@ -193,17 +193,25 @@ body {
   background: var(--ui-accent);
 }
 
-#inserter-toggle {
+#topbar #inserter-toggle {
   margin-left: 0;
   margin-right: 8px;
   background: var(--primary);
-  color: var(--primary-foreground);
+  color: #fff;
   border-radius: var(--radius);
 }
 
-#inserter-toggle:hover {
+#topbar #inserter-toggle:hover {
   background: color-mix(in oklch, var(--primary) 90%, black);
-  color: var(--primary-foreground);
+  color: #fff;
+}
+
+/* Expanded top-bar toggles are tertiary selected controls. The legacy
+   aria-expanded:bg-neutral-900 utility would otherwise resolve to the light
+   foreground token and produce a blank white square in dark mode. */
+#topbar button[aria-expanded="true"]:not(#inserter-toggle) {
+  background: var(--ui-accent);
+  color: var(--accent-foreground);
 }
 
 #more-content {
@@ -347,6 +355,12 @@ body {
     color 100ms linear,
     background-color 100ms linear,
     border-color 100ms linear;
+}
+
+/* Tabs are edge-to-edge navigation, not rounded buttons. A radius curves the
+   inset active underline upward and makes the three labels look like pills. */
+:is(#tree, #inserter, #sidebar) button[role="tab"] {
+  border-radius: 0;
 }
 
 :is(#tree, #inserter, #pattern-flyout, #sidebar, #pattern-explorer)

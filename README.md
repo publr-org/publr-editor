@@ -153,9 +153,11 @@ What the editor already proves:
   (`$blockSettings`, one template per control kind; option buttons carry the
   primitive + target in their dataset). Toolbar formatting is deliberately NOT
   mirrored in the sidebar.
-- **Icons: Publr's own set** — original artwork hand-authored in
-  `src/icons.ts` (24×24 grid, 1.5px strokes, currentColor; no third-party
-  icon library). Definitions and setting options declare an icon NAME
+- **Icons: shared Publr UI set** — canonical UI artwork comes from the pinned
+  [`@publr/icons`](https://github.com/publr-org/publr-icons) repository.
+  `src/icons.ts` is only a compatibility adapter; social/brand artwork remains
+  separate in `src/blocks/social-icons.ts` and `assets/social-icons/`.
+  Definitions and setting options declare an icon NAME
   (`icon: "heading"`), chrome resolves it: imperative layers inline `iconSvg()`
   (toolbar indicator, slash picker, "+" inserter), the declarative shell
   mounts a `<symbol>` sprite once (`mountIconSprite`) and binds
@@ -184,7 +186,7 @@ src/selection.ts  block multiselection — selectionchange mirror + reactive ids
 src/tree.ts       block-tree traversal (flatten / locate / path) for nesting
 src/editor.ts     createEditor — canvas, events, the commit() choke point
 src/chrome-inline.ts  attachInlineChrome — shipped floating toolbar + slash + "+" inserter
-src/icons.ts      Publr's own icon set — hand-authored SVG bodies
+src/icons.ts      thin adapter over the pinned @publr/icons UI package
 src/demo.ts       full builder demo shell (registers the core blocks via the public API)
 src/fields-demo.ts    embed showcase — N independent editors, one per field
 src/*.css         demo/chrome styles (styles.css, chrome.css, fields.css)

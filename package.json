@@ -13,6 +13,9 @@
     "fmt": "vp fmt",
     "icons:social": "node scripts/build-social-icons.mjs"
   },
+  "dependencies": {
+    "@publr/icons": "github:publr-org/publr-icons#bb2b18e"
+  },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.2",
     "@vitest/browser-playwright": "^4.1.9",
