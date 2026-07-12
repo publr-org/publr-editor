@@ -9,11 +9,15 @@ import {
   ICONS,
   ICON_VIEWBOX,
   iconRef as sharedIconRef,
-  iconSvg,
+  iconSvg as sharedIconSvg,
   mountIconSprite as mountSharedIconSprite,
 } from "@publr/icons";
 
-export { ICONS, ICON_VIEWBOX, iconSvg };
+export { ICONS, ICON_VIEWBOX };
+
+/** Preserve the editor's established default size while sharing the artwork. */
+export const iconSvg = (name: string, className = "h-6 w-6"): string =>
+  sharedIconSvg(name, className);
 
 /** Mount the shared UI sprite under the editor's backwards-compatible ids. */
 export function mountIconSprite(doc: Document = document): void {
